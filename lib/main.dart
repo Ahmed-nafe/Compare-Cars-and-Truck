@@ -1,3 +1,8 @@
+import 'package:task2/Classes/Car.dart';
+import 'package:task2/Classes/Motorcycle.dart';
+import 'package:task2/Classes/Truck.dart';
+import 'package:task2/Compare.dart';
+
 void main() {
   Car car1 = Car(
       cylinderCapacity: 1600,
@@ -56,116 +61,5 @@ void main() {
       sidecar: false);
   motorcycle1.printMotorcycleInfo();
 
-  if (car1.maxSpeed > car2.maxSpeed) {
-    print("Car Faster is \n");
-    car1.printCarInfo();
-  } else if (car1.maxSpeed == car2.maxSpeed) {
-    print("The speed of the two cars is equal to each other");
-  } else {
-    print("Car Faster is \n");
-    car2.printCarInfo();
-  }
-  if (truck1.loadCapacity > truck2.loadCapacity) {
-    print("Heaviest Truck is \n");
-    truck1.printTruckInfo();
-  } else if (truck1.loadCapacity == truck2.loadCapacity) {
-    print("The LoadCapacity of the two cars is equal to each other");
-  } else {
-    print("Heaviest truck is \n");
-    truck2.printTruckInfo();
-  }
-  if (motorcycle1.price > motorcycle2.price) {
-    print("Cheaper Motorcycle\n");
-    motorcycle2.printMotorcycleInfo();
-  } else {
-    print("Cheaper Motorcycle\n");
-    motorcycle1.printMotorcycleInfo();
-  }
-}
-
-class Vehicle {
-  int cylinderCapacity;
-  int maxSpeed;
-  String engineType;
-  int model;
-  String manufacturer;
-  int price;
-
-  Vehicle(
-      {required this.cylinderCapacity,
-      required this.maxSpeed,
-      required this.engineType,
-      required this.manufacturer,
-      required this.price,
-      required this.model});
-
-  void printInfo() {
-    print('Cylinder Capacity: $cylinderCapacity');
-    print('Max Speed: $maxSpeed');
-    print('Engine Type: $engineType');
-    print('Model Year: $model');
-    print('Manufacturer: $manufacturer');
-    print('Price: $price');
-  }
-}
-
-class Car extends Vehicle {
-  String transmission;
-  int numberOfpassengers;
-
-  Car(
-      {required super.cylinderCapacity,
-      required super.maxSpeed,
-      required super.engineType,
-      required super.manufacturer,
-      required super.price,
-      required super.model,
-      required this.transmission,
-      required this.numberOfpassengers});
-
-  void printCarInfo() {
-    printInfo();
-    print("Transmission: $transmission");
-    print("Number of Passengers: $numberOfpassengers\n");
-  }
-}
-
-class Truck extends Vehicle {
-  int loadCapacity;
-
-  Truck(
-      {required super.cylinderCapacity,
-      required super.maxSpeed,
-      required super.engineType,
-      required super.manufacturer,
-      required super.price,
-      required super.model,
-      required this.loadCapacity});
-
-  void printTruckInfo() {
-    printInfo();
-    print("LoadCapacity: $loadCapacity\n");
-  }
-}
-
-class Motorcycle extends Vehicle {
-  int tires;
-
-  bool sidecar;
-
-  Motorcycle(
-      {required super.cylinderCapacity,
-      required super.maxSpeed,
-      required super.engineType,
-      required super.manufacturer,
-      required super.price,
-      required super.model,
-      required this.sidecar,
-      this.tires = 2});
-
-  void printMotorcycleInfo() {
-    printInfo();
-    print("Sidecar: $sidecar");
-    print("Tires: $tires\n");
-  }
+  Compare(car1, car2, truck1, truck2, motorcycle1, motorcycle2);
 }
