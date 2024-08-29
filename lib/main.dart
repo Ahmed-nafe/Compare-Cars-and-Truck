@@ -6,7 +6,7 @@ import 'package:task2/Compare.dart';
 void main() {
   Car car1 = Car(
       cylinderCapacity: 1600,
-      maxSpeed: 215,
+      maxSpeed: 255,
       engineType: "Gasoline",
       manufacturer: "Peugeot",
       price: 1250000,
@@ -24,6 +24,15 @@ void main() {
       transmission: "Automatic",
       numberOfpassengers: 5);
   car2.printCarInfo();
+  Car car3 = Car(
+      cylinderCapacity: 1600,
+      maxSpeed: 1000,
+      engineType: "Gasoline",
+      manufacturer: "Peugeot",
+      price: 1250000,
+      model: 2023,
+      transmission: "Automatic",
+      numberOfpassengers: 5);
   Truck truck1 = Truck(
       cylinderCapacity: 2000,
       maxSpeed: 170,
@@ -47,7 +56,7 @@ void main() {
       maxSpeed: 110,
       engineType: "Electric",
       manufacturer: "Suzuki",
-      price: 116000,
+      price: 1040500,
       model: 2011,
       sidecar: true);
   motorcycle1.printMotorcycleInfo();
@@ -56,10 +65,9 @@ void main() {
       maxSpeed: 200,
       engineType: "Gasolie",
       manufacturer: "Honda",
-      price: 1040500,
+      price: 2000000,
       model: 2021,
       sidecar: false);
   motorcycle1.printMotorcycleInfo();
-
-  Compare(car1, car2, truck1, truck2, motorcycle1, motorcycle2);
+  Compare(car1, car2, car3, truck1, truck2, motorcycle1, motorcycle2);
 }
